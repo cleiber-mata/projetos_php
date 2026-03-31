@@ -54,4 +54,5 @@ echo 'strtolower() mostra tudo minusculo: '; echo strtolower($clm);  echo '<br>'
 
 
 
+
 ?>
