@@ -2,10 +2,12 @@
 
     <label for="nome">Nome</label>
     <input type="text" id="nome" name="nome">
-
+    <br>
+    
     <label for="sobrenome">Sobrenome</label>
     <input type="text" id="sobrenome" name="sobrenome">
-
+    <br>
+    
     <label for="dn">Data nascimento</label>
     <input type="date" id="dn" name="DN">
 
