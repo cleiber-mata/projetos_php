@@ -1,14 +1,14 @@
 <form method="POST">
-
-    <label for="nome">Nome</label>
+    <br><br>
+    <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome">
-    <br>
+    <br><br>
     
-    <label for="sobrenome">Sobrenome</label>
+    <label for="sobrenome">Sobrenome:</label>
     <input type="text" id="sobrenome" name="sobrenome">
-    <br>
+    <br><br>
     
-    <label for="dn">Data nascimento</label>
+    <label for="dn">Data nascimento:</label>
     <input type="date" id="dn" name="DN">
 
     <button type="submit">Enviar</button>
