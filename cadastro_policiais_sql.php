@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Policiais</title>
+</head>
+<body>
+
 <form method="POST">
     <br><br>
     <label for="nome_pol">nome_pol:</label>
@@ -45,3 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+</body>
+</html>
