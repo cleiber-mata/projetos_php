@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Motos</title>
+</head>
+<body>
+
+
 <form method="POST">
     <br><br>
     <label for="prefixo_mt">prefixo_mt:</label>
@@ -11,7 +20,6 @@
     <label for="placa_mt">placa_mt:</label>
     <input type="text" id="placa_mt" name="placa_mt">
     <br><br>
-
 
     <button type="submit">Enviar</button>
 
@@ -41,4 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
+
 ?>
+</body>
+</html>
