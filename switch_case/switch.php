@@ -4,7 +4,7 @@
 	<button type="submit">Enviar</button>
 </form>
 <?php
-	switch (@$_POST['num']) {
+	switch ($_POST['num']) {
 		case 1:
 			print "Domingo";
 			break;
@@ -15,7 +15,7 @@
 			print "Terça-feira";
 			break;
 		case 4:
-			print "Segunda-feira";
+			print "Quarta-feira";
 			break;
 		case 5:
 			print "Quinta-feira";
