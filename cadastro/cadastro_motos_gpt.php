@@ -20,12 +20,12 @@
 
         /* Caixa principal do formulário */
         .container {
-            background: rgba(0, 0, 0, 0.7); /* Fundo preto com transparência */
+            background: rgba(0, 2, 14, 0.95); /* Fundo avermelhado com transparência */
             color: white; /* Cor do texto */
 
-            width: 350px; /* Largura da caixa */
-            padding: 30px; /* Espaçamento interno */
-            border-radius: 10px; /* Bordas arredondadas */
+            width: 450px; /* Largura da caixa */
+            padding: 50px; /* Espaçamento interno */
+            border-radius: 25px; /* Bordas arredondadas */
 
             position: absolute; /* Permite posicionar livremente */
             top: 50%; /* Desce 50% da tela */
@@ -36,13 +36,13 @@
         /* Estilo do título */
         h2 {
             text-align: center; /* Centraliza o texto */
-            margin-bottom: 20px; /* Espaço abaixo do título */
+            margin-bottom: 40px; /* Espaço abaixo do título */
         }
 
         /* Estilo dos rótulos dos campos */
         label {
             display: block; /* Faz cada label ocupar uma linha */
-            margin-top: 10px; /* Espaço acima */
+            margin-top: 20px; /* Espaço acima */
         }
 
         /* Estilo dos campos de entrada */
@@ -60,7 +60,7 @@
             padding: 10px; /* Espaço interno */
             margin-top: 15px; /* Espaço acima */
 
-            background-color: #00a86b; /* Cor de fundo verde */
+            background-color: #0d711a; /* Cor de fundo verde */
             color: white; /* Cor do texto */
 
             border: none; /* Remove a borda padrão */
@@ -85,7 +85,7 @@
 <body> <!-- Corpo visível da página -->
 
     <div class="container"> <!-- Caixa principal -->
-        <h2>Cadastro de Motos</h2> <!-- Título do formulário -->
+        <h2>Cadastro de Motos<br>ROTAM</h2> <!-- Título do formulário -->
 
         <form method="POST"> <!-- Formulário que envia os dados usando POST -->
             
