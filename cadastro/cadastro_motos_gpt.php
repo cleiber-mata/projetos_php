@@ -13,23 +13,23 @@
             font-family: Arial, sans-serif; /* Define a fonte do texto */
 
             /* Define uma imagem de fundo */
-            background: url('https://images.unsplash.com/photo-1581090700227-4c4d6d1b8d2e') no-repeat center center/cover;
+            background: url('../imagem/aqui_nao.jpg') no-repeat center center/cover;
 
             height: 100vh; /* Faz a altura ocupar 100% da tela */
         }
 
         /* Caixa principal do formulário */
         .container {
-            background: rgba(0, 2, 14, 0.95); /* Fundo avermelhado com transparência */
+            background: rgba(0, 2, 14, 0.3); /* Fundo avermelhado com transparência */
             color: white; /* Cor do texto */
 
-            width: 450px; /* Largura da caixa */
-            padding: 50px; /* Espaçamento interno */
+            width: 300px; /* Largura da caixa */
+            padding: 30px; /* Espaçamento interno */
             border-radius: 25px; /* Bordas arredondadas */
 
             position: absolute; /* Permite posicionar livremente */
             top: 50%; /* Desce 50% da tela */
-            left: 50%; /* Vai 50% para a direita */
+            left: 20%; /* Vai 20% para a direita */
             transform: translate(-50%, -50%); /* Centraliza exatamente no meio */
         }
 
@@ -47,7 +47,7 @@
 
         /* Estilo dos campos de entrada */
         input {
-            width: 100%; /* Faz ocupar toda a largura da caixa */
+            width: 80%; /* Faz ocupar toda a largura da caixa */
             padding: 8px; /* Espaço interno */
             border: none; /* Remove borda padrão */
             border-radius: 5px; /* Bordas arredondadas */
@@ -56,7 +56,7 @@
 
         /* Estilo do botão */
         button {
-            width: 100%; /* Largura total */
+            width: 80%; /* Largura total */
             padding: 10px; /* Espaço interno */
             margin-top: 15px; /* Espaço acima */
 
