@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <TITLE> Classificação por Idade </TITLE>
+    </head>
+<body>
+
 <?php
 /*
 Receba a idade de uma pessoa e classifique:
@@ -8,12 +16,13 @@ Receba a idade de uma pessoa e classifique:
 60+ → Idoso
 */
 ?>
-
+<div style="text-align: center; margin-top: 100px;">
 <form method="POST">
     <LABEL> Idade <input type="number" id="idade" name="idade" min="0"></LABEL>
     <br><br>
     <button type="submit">Enviar Idade</button>
-<form>
+</form>
+    
 <br><br>
 
 <?php
@@ -31,3 +40,6 @@ if ($_POST) {
     }
 }
 ?>
+</div>
+</body>
+</html>

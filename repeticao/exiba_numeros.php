@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-br"></html>
+<html lang="pt-br">
 <herd>
 <meta charset="UTF-8">
 </herd>
