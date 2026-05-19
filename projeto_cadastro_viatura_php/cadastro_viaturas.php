@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: url('aqui_nao.jpg') no-repeat center center/cover;
+            background: url('imagens/aqui_nao.jpg') no-repeat center center/cover;
             min-height: 100vh;
         }
 
