@@ -1,8 +1,19 @@
-```html
+<?php
+session_start();
+
+if (!isset($_SESSION['perfil'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$perfil = $_SESSION['perfil'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,6 +32,10 @@
         h1{
             margin-top: 40px;
             color: #222;
+        }
+
+        h2{
+            color: #555;
         }
 
         .menu{
@@ -58,6 +73,14 @@
 
         }
 
+        .logout{
+            background-color: #8b0000 !important;
+        }
+
+        .logout:hover{
+            background-color: #b22222 !important;
+        }
+
     </style>
 
 </head>
@@ -66,26 +89,51 @@
 
     <h1>Sistema de Cadastro de Viaturas ROTAM</h1>
 
+    <h2>
+        Perfil:
+        <?php echo strtoupper($perfil); ?>
+    </h2>
+
     <div class="menu">
 
-        <button onclick="window.location.href='cadastro_motos_gpt.php'">
-            Cadastro de Motos
+        <?php if($perfil == "admin"){ ?>
+
+            <button onclick="window.location.href='cadastro_viaturas.php'">
+                Cadastro de Viaturas
+            </button>
+
+            <button onclick="window.location.href='cadastro_policial.php'">
+                Cadastro de Policiais
+            </button>
+
+            <button onclick="window.location.href='manutencao.php'">
+                Manutenção
+            </button>
+
+        <?php } ?>
+
+        <button onclick="window.location.href='pesquisar_viatura.php'">
+            Pesquisar Viatura
         </button>
 
-        <button onclick="window.location.href='pesquisar_moto.php'">
-            Pesquisar Moto
+        <button onclick="window.location.href='pesquisar_manutencao.php'">
+            Pesquisar Manutenção
         </button>
 
-        <button onclick="window.location.href='cadastro_policial.php'">
-            Cadastro de Policiais
-        </button>
-
-        <button onclick="window.location.href='manutencao.php'">
-            Manutenção
+        <button onclick="window.location.href='pesquisar_policiais.php'">
+            Pesquisar Policiais
         </button>
 
         <button onclick="window.location.href='relatorios.php'">
             Relatórios
+        </button>
+
+        <button
+            class="logout"
+            onclick="window.location.href='logout.php'">
+
+            Sair
+
         </button>
 
     </div>
@@ -93,4 +141,3 @@
 </body>
 
 </html>
-```

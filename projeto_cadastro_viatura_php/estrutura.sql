@@ -4,12 +4,12 @@ COLLATE utf8mb4_general_ci;
 
 USE cadastro_viatura_rotam;
 
-CREATE TABLE IF NOT EXISTS motos (
-    id_mt INT AUTO_INCREMENT PRIMARY KEY,
-    prefixo_mt VARCHAR(10) NOT NULL UNIQUE,
-    modelo_mt VARCHAR(50) NOT NULL,
-    marca_mt VARCHAR(50),
-    placa_mt VARCHAR(8) NOT NULL UNIQUE,
+CREATE TABLE IF NOT EXISTS viaturas (
+    id_vtr INT AUTO_INCREMENT PRIMARY KEY,
+    prefixo_vtr VARCHAR(10) NOT NULL UNIQUE,
+    modelo_vtr VARCHAR(50) NOT NULL,
+    marca_vtr VARCHAR(50),
+    placa_vtr VARCHAR(8) NOT NULL UNIQUE,
     ano_modelo INT,
     km_atual INT DEFAULT 0,
     cartao_manutencao VARCHAR(16),
@@ -28,17 +28,17 @@ CREATE TABLE IF NOT EXISTS policiais (
     celular_pol VARCHAR(15)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS cautela_mt (
+CREATE TABLE IF NOT EXISTS cautela_vtr (
     id_cautela INT AUTO_INCREMENT PRIMARY KEY,
-    id_mt INT NOT NULL,
+    id_vtr INT NOT NULL,
     id_pol INT NOT NULL,
     data_inicio DATETIME DEFAULT CURRENT_TIMESTAMP,
     data_devolucao DATETIME,
     observacao TEXT,
 
-    CONSTRAINT fk_cautela_motos
-        FOREIGN KEY (id_mt)
-        REFERENCES motos(id_mt)
+    CONSTRAINT fk_cautela_viaturas
+        FOREIGN KEY (id_vtr)
+        REFERENCES viaturas(id_vtr)
         ON DELETE RESTRICT
         ON UPDATE CASCADE,
 
@@ -49,9 +49,9 @@ CREATE TABLE IF NOT EXISTS cautela_mt (
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS manutencao_mt (
+CREATE TABLE IF NOT EXISTS manutencao_vtr (
     id_manutencao INT AUTO_INCREMENT PRIMARY KEY,
-    id_mt INT NOT NULL,
+    id_vtr INT NOT NULL,
     tipo_manutencao VARCHAR(20) NOT NULL,
     descricao_servico TEXT,
     km_baixa INT,
@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS manutencao_mt (
     data_alta DATE,
     observacao TEXT,
 
-    CONSTRAINT fk_manutencao_motos
-        FOREIGN KEY (id_mt)
-        REFERENCES motos(id_mt)
+    CONSTRAINT fk_manutencao_viaturas
+        FOREIGN KEY (id_vtr)
+        REFERENCES viaturas(id_vtr)
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
