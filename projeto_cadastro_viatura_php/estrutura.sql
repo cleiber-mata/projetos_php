@@ -12,7 +12,11 @@ CREATE TABLE IF NOT EXISTS motos (
     placa_mt VARCHAR(8) NOT NULL UNIQUE,
     ano_modelo INT,
     km_atual INT DEFAULT 0,
-    status_mt VARCHAR(30) DEFAULT 'ATIVA',
+    cartao_manutencao VARCHAR(16),
+
+    situacao_cautela VARCHAR(20) DEFAULT 'SEM_CAUTELA',
+    situacao_operacional VARCHAR(20) DEFAULT 'DISPONIVEL',
+
     observacao TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -21,7 +25,7 @@ CREATE TABLE IF NOT EXISTS policiais (
     posto_graduacao_pol VARCHAR(20) NOT NULL,
     nome_guerra_pol VARCHAR(50) NOT NULL,
     matricula VARCHAR(20) UNIQUE NOT NULL,
-    celular_pol VARCHAR(15),
+    celular_pol VARCHAR(15)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS cautela_mt (
@@ -48,10 +52,12 @@ CREATE TABLE IF NOT EXISTS cautela_mt (
 CREATE TABLE IF NOT EXISTS manutencao_mt (
     id_manutencao INT AUTO_INCREMENT PRIMARY KEY,
     id_mt INT NOT NULL,
-    km_baixa INT NOT NULL,
-    km_proxima_revisao INT,
-    tipo_manutencao VARCHAR(50),
+    tipo_manutencao VARCHAR(20) NOT NULL,
     descricao_servico TEXT,
+    km_baixa INT,
+    os_cman VARCHAR(5),
+    os_prime VARCHAR(5),
+    km_proxima_revisao INT,
     oficina VARCHAR(100),
     data_baixa DATE,
     data_alta DATE,
