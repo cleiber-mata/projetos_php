@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS viaturas (
     modelo_vtr VARCHAR(50) NOT NULL,
     marca_vtr VARCHAR(50),
     placa_vtr VARCHAR(8) NOT NULL UNIQUE,
-    ano_modelo INT,
+    ano_modelo YEAR,
     km_atual INT DEFAULT 0,
     cartao_manutencao VARCHAR(16),
 
