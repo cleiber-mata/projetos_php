@@ -1,26 +1,24 @@
 <?php
 session_start();
 
-if(isset($_POST['entrar_admin'])){
+if (isset($_POST['entrar_admin'])) {
 
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-    if($login == "GTAM" && $senha == "gtam2026"){
+    if ($login == "GTAM" && $senha == "gtam2026") {
 
         $_SESSION['perfil'] = "admin";
 
         header("Location: menu.php");
         exit;
-
-    }else{
+    } else {
 
         $erro = "Login ou senha inválidos.";
-
     }
 }
 
-if(isset($_POST['entrar_consulta'])){
+if (isset($_POST['entrar_consulta'])) {
 
     $_SESSION['perfil'] = "consulta";
 
@@ -40,30 +38,31 @@ if(isset($_POST['entrar_consulta'])){
     <title>Login Sistema ROTAM</title>
 
     <style>
+        body {
+            background-image: url("../imagens/aqui_nao.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-        body{
-            background-color: #f4f4f4;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             margin-top: 80px;
         }
 
-        .login-box{
+        .login-box {
 
             width: 350px;
             margin: auto;
-
-            background-color: white;
-
+            background-color: rgba(255,255,255,0.92);
             padding: 30px;
-
             border-radius: 10px;
-
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-
+            backdrop-filter: blur(6px);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            
         }
 
-        input{
+        input {
 
             width: 90%;
             padding: 12px;
@@ -73,7 +72,7 @@ if(isset($_POST['entrar_consulta'])){
 
         }
 
-        button{
+        button {
 
             width: 95%;
             padding: 12px;
@@ -93,22 +92,21 @@ if(isset($_POST['entrar_consulta'])){
 
         }
 
-        button:hover{
+        button:hover {
             background-color: #444;
         }
 
-        .consulta{
+        .consulta {
             background-color: #555;
         }
 
-        .consulta:hover{
+        .consulta:hover {
             background-color: #777;
         }
 
-        .erro{
+        .erro {
             color: red;
         }
-
     </style>
 
 </head>
@@ -123,9 +121,9 @@ if(isset($_POST['entrar_consulta'])){
 
         <?php
 
-            if(isset($erro)){
-                echo "<p class='erro'>$erro</p>";
-            }
+        if (isset($erro)) {
+            echo "<p class='erro'>$erro</p>";
+        }
 
         ?>
 
