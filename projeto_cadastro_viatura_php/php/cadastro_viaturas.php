@@ -7,11 +7,15 @@
 
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('../imagens/aqui_nao.jpg') no-repeat center center/cover;
-            min-height: 100vh;
+            background-image: url("../imagens/aqui_nao.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 80px;
         }
 
         .container {

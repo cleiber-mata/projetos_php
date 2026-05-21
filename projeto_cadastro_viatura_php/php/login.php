@@ -12,9 +12,11 @@ if (isset($_POST['entrar_admin'])) {
 
         header("Location: menu.php");
         exit;
+
     } else {
 
         $erro = "Login ou senha inválidos.";
+
     }
 }
 
@@ -33,97 +35,173 @@ if (isset($_POST['entrar_consulta'])) {
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Login Sistema ROTAM</title>
 
     <style>
-        body {
-            background-image: url("../imagens/aqui_nao.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+
+        body{
+
+            margin: 0;
+            padding: 0;
+
+            min-height: 100vh;
 
             font-family: Arial, Helvetica, sans-serif;
+
             text-align: center;
-            margin-top: 80px;
+
+            background: url('../imagens/gtam_metal.jpg')
+                        no-repeat
+                        center center/cover;
+
         }
 
-        .login-box {
+        .painel{
 
-            width: 350px;
-            margin: auto;
-            background-color: rgba(255,255,255,0.92);
-            padding: 30px;
-            border-radius: 10px;
-            backdrop-filter: blur(6px);
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            
+            background: rgba(0,0,0,0.60);
+
+            width: 420px;
+
+            margin: 120px 0 0 80px;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(4px);
+
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+
+            color: white;
+
         }
 
-        input {
+        h1{
+
+            color: #ff2b2b;
+
+            text-shadow: 2px 2px 5px black;
+
+            margin-bottom: 10px;
+
+        }
+
+        h2{
+
+            margin-bottom: 25px;
+
+            color: #dddddd;
+
+        }
+
+        input{
 
             width: 90%;
-            padding: 12px;
-            margin: 10px;
 
-            font-size: 16px;
+            padding: 14px;
 
-        }
-
-        button {
-
-            width: 95%;
-            padding: 12px;
-            margin-top: 10px;
+            margin: 10px 0;
 
             border: none;
 
-            background-color: #222;
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            outline: none;
+
+        }
+
+        button{
+
+            width: 97%;
+
+            padding: 14px;
+
+            margin-top: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background-color: #1f1f1f;
 
             color: white;
 
             font-size: 16px;
 
-            border-radius: 8px;
+            font-weight: bold;
 
             cursor: pointer;
 
+            transition: 0.3s;
+
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+
         }
 
-        button:hover {
+        button:hover{
+
             background-color: #444;
+
+            transform: translateY(-3px);
+
         }
 
-        .consulta {
+        .consulta{
+
             background-color: #555;
+
         }
 
-        .consulta:hover {
+        .consulta:hover{
+
             background-color: #777;
+
         }
 
-        .erro {
-            color: red;
+        .erro{
+
+            color: #ff4d4d;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
         }
+
+        hr{
+
+            margin-top: 25px;
+            margin-bottom: 20px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+        }
+
     </style>
 
 </head>
 
 <body>
 
-    <div class="login-box">
+    <div class="painel">
 
         <h1>ROTAM</h1>
 
-        <h2>Acesso ao Sistema</h2>
+        <h2>Sistema de Cadastro de Viaturas</h2>
 
         <?php
 
-        if (isset($erro)) {
-            echo "<p class='erro'>$erro</p>";
-        }
+            if(isset($erro)){
+
+                echo "<p class='erro'>$erro</p>";
+
+            }
 
         ?>
 
@@ -143,7 +221,7 @@ if (isset($_POST['entrar_consulta'])) {
                 type="submit"
                 name="entrar_admin">
 
-                Entrar com senha
+                Entrar
 
             </button>
 
@@ -158,7 +236,7 @@ if (isset($_POST['entrar_consulta'])) {
                 type="submit"
                 name="entrar_consulta">
 
-                Entrar apenas para consulta
+                Consultas
 
             </button>
 

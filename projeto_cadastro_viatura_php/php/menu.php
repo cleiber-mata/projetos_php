@@ -20,29 +20,39 @@ $perfil = $_SESSION['perfil'];
     <title>Sistema de Cadastro de Viaturas ROTAM</title>
 
     <style>
+        body {
 
-        body{
-            background-color: #f4f4f4;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
+
+            min-height: 100vh;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            text-align: center;
+
+            background: url('../imagens/aqui_nao.jpg') no-repeat center center/cover;
         }
 
-        h1{
+        h1 {
             margin-top: 40px;
-            color: #222;
+            color: #f70d20;
+            text-shadow: 2px 2px 5px black;
         }
 
-        h2{
-            color: #555;
+        h2 {
+            color: #0e0d0d;
         }
 
-        .menu{
+        .menu {
             margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .menu button{
+        .menu button {
 
             width: 260px;
             padding: 15px;
@@ -61,11 +71,11 @@ $perfil = $_SESSION['perfil'];
 
             transition: 0.3s;
 
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 
         }
 
-        .menu button:hover{
+        .menu button:hover {
 
             background-color: #444;
 
@@ -73,69 +83,87 @@ $perfil = $_SESSION['perfil'];
 
         }
 
-        .logout{
+        .logout {
             background-color: #8b0000 !important;
         }
 
-        .logout:hover{
+        .logout:hover {
             background-color: #b22222 !important;
         }
 
+        .painel {
+
+            background: rgba(0, 0, 0, 0.55);
+
+            width: 900px;
+
+            margin: 60px auto;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(3px);
+
+        }
     </style>
 
 </head>
 
 <body>
 
-    <h1>Sistema de Cadastro de Viaturas ROTAM</h1>
+    <div class="painel">
 
-    <h2>
-        Perfil:
-        <?php echo strtoupper($perfil); ?>
-    </h2>
+        <h1>Sistema de Cadastro de Viaturas ROTAM</h1>
 
-    <div class="menu">
+        <h2>
+            Perfil:
+            <?php echo strtoupper($perfil); ?>
+        </h2>
 
-        <?php if($perfil == "admin"){ ?>
+        <div class="menu">
 
-            <button onclick="window.location.href='cadastro_viaturas.php'">
-                Cadastro de Viaturas
+            <?php if ($perfil == "admin") { ?>
+
+                <button onclick="window.location.href='cadastro_viaturas.php'">
+                    Cadastro de Viaturas
+                </button>
+
+                <button onclick="window.location.href='em_construcao.php'">
+                    Cadastro de Policiais
+                </button>
+
+                <button onclick="window.location.href='em_construcao.php'">
+                    Manutenção
+                </button>
+
+            <?php } ?>
+
+            <button onclick="window.location.href='pesquisar_viatura.php'">
+                Pesquisar Viatura
             </button>
 
-            <button onclick="window.location.href='cadastro_policial.php'">
-                Cadastro de Policiais
+            <button onclick="window.location.href='em_construcao.php'">
+                Pesquisar Manutenção
             </button>
 
-            <button onclick="window.location.href='manutencao.php'">
-                Manutenção
+            <button onclick="window.location.href='em_construcao.php'">
+                Pesquisar Policiais
             </button>
 
-        <?php } ?>
+            <button onclick="window.location.href='em_construcao.php'">
+                Relatórios
+            </button>
 
-        <button onclick="window.location.href='pesquisar_viatura.php'">
-            Pesquisar Viatura
-        </button>
+            <button
+                class="logout"
+                onclick="window.location.href='logout.php'">
 
-        <button onclick="window.location.href='pesquisar_manutencao.php'">
-            Pesquisar Manutenção
-        </button>
+                Sair
 
-        <button onclick="window.location.href='pesquisar_policiais.php'">
-            Pesquisar Policiais
-        </button>
+            </button>
 
-        <button onclick="window.location.href='relatorios.php'">
-            Relatórios
-        </button>
-
-        <button
-            class="logout"
-            onclick="window.location.href='logout.php'">
-
-            Sair
-
-        </button>
-
+        </div>
     </div>
 
 </body>

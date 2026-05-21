@@ -44,7 +44,7 @@ $resultado = $conn->query($sql);
 
 <head>
     <meta charset="UTF-8">
-    <title>Pesquisar Moto</title>
+    <title>Pesquisar Viatura</title>
 
     <style>
         body {
@@ -81,7 +81,7 @@ $resultado = $conn->query($sql);
             color: white;
             text-decoration: none;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
         }
 
@@ -97,7 +97,7 @@ $resultado = $conn->query($sql);
 
 <body>
 
-    <h1>Pesquisar Moto</h1>
+    <h1>Pesquisar Viatura</h1>
 
     <form method="GET">
         <input type="text" name="busca" placeholder="Digite prefixo, placa ou modelo" value="<?php echo $busca; ?>">
