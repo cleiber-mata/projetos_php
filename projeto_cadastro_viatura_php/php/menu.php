@@ -82,7 +82,7 @@ $perfil = $_SESSION['perfil'];
                 <button onclick="window.location.href='cadastro_viaturas.php'">
                     Cadastro de Viaturas
                 </button>
-                <button onclick="window.location.href='em_construcao.php'">
+                <button onclick="window.location.href='cadastro_policiais.php'">
                     Cadastro de Policiais
                 </button>
                 <button onclick="window.location.href='em_construcao.php'">
