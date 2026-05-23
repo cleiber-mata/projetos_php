@@ -35,111 +35,7 @@ $resultado = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Pesquisar Policial</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.72),
-                    rgba(0, 0, 0, 0.72)),
-                url('../imagens/escudo.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            color: white;
-            text-align: center;
-        }
-
-        h1 {
-            color: #ff1e1e;
-            text-shadow: 2px 2px 5px black;
-            margin-top: 30px;
-            font-size: 38px;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-
-        input {
-            padding: 14px;
-            width: 360px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            outline: none;
-        }
-
-        button,
-        a {
-            padding: 13px 18px;
-            background-color: #222;
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        button:hover,
-        a:hover {
-            transform: scale(1.05);
-            background-color: #444;
-        }
-
-        .voltar {
-            background-color: #555;
-            display: inline-block;
-            margin-top: 15px;
-        }
-
-        .atualizar {
-            background-color: #0d711a;
-            display: inline-block;
-        }
-
-        .atualizar:hover {
-            background-color: #0a5c15;
-        }
-
-        table {
-            width: 95%;
-            margin: 35px auto;
-            border-collapse: collapse;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
-        }
-
-        th {
-            background-color: #b00000;
-            color: white;
-            padding: 14px;
-            font-size: 16px;
-            text-shadow: 1px 1px 3px black;
-        }
-
-        td {
-            padding: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        tr:hover {
-            background-color: rgba(255, 0, 0, 0.18);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -165,7 +61,7 @@ $resultado = $conn->query($sql);
                 <td><?php echo $linha['posto_graduacao_pol']; ?></td>
                 <td><?php echo $linha['nome_guerra_pol']; ?></td>
                 <td><?php echo $linha['matricula']; ?></td>
-                
+
                 <td><?php
                     $cel = preg_replace('/[^0-9]/', '', $linha['celular_pol']);
                     if (strlen($cel) == 13) {
