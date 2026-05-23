@@ -95,7 +95,7 @@ $perfil = $_SESSION['perfil'];
             <button onclick="window.location.href='em_construcao.php'">
                 Pesquisar Manutenção
             </button>
-            <button onclick="window.location.href='em_construcao.php'">
+            <button onclick="window.location.href='pesquisar_policial.php'">
                 Pesquisar Policiais
             </button>
             <button onclick="window.location.href='em_construcao.php'">

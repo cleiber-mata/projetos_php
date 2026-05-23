@@ -3,7 +3,7 @@ session_start();
 if (isset($_POST['entrar_admin'])) {
     $login = $_POST['login'];
     $senha = $_POST['senha'];
-    if ($login == "GTAM" && $senha == "gtam2026") {
+    if ($login == "GTAM" && $senha == "") {
         $_SESSION['perfil'] = "admin";
         header("Location: menu.php");
         exit;
