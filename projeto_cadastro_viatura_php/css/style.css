@@ -1,112 +1,72 @@
 body {
-
     margin: 0;
     padding: 0;
-
     font-family: Arial, Helvetica, sans-serif;
-
     background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.45)
-        ),
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
         url('../imagens/escudo.jpg');
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     min-height: 100vh;
-
     color: white;
-
     text-align: center;
 }
 
 .painel {
-
     background: rgba(0, 0, 0, 0.45);
-
     width: 90%;
     max-width: 700px;
-
     margin: 40px auto;
-
     padding: 35px;
-
     border-radius: 25px;
-
     backdrop-filter: blur(4px);
-
-    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
 }
 
 .container {
-
     background: rgba(0, 0, 0, 0.45);
-
     width: 90%;
-    max-width: 700px;
-
+    max-width: 300px;
     margin: 40px auto;
-
     padding: 35px;
-
     border-radius: 25px;
-
     backdrop-filter: blur(4px);
-
-    box-shadow: 0 0 25px rgba(0,0,0,0.7);
-
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
     color: white;
 }
 
 h1 {
-
     color: #ff1e1e;
-
     text-shadow: 2px 2px 5px black;
-
     font-size: 42px;
-
     margin-bottom: 10px;
 }
 
 h2 {
-
     color: white;
-
     text-shadow: 2px 2px 5px black;
-
     margin-bottom: 25px;
 }
 
 label {
-
     display: block;
-
     margin-top: 12px;
-
     font-weight: bold;
 }
 
 input,
 select {
-
-    width: 95%;
-
-    padding: 12px;
-
+    width: 80%;
+    max-width: 300px;
+    padding: 14px;
     margin-top: 6px;
     margin-bottom: 14px;
-
     border: none;
-
-    border-radius: 8px;
-
+    border-radius: 10px;
     font-size: 16px;
-
     outline: none;
 }
 
@@ -114,154 +74,127 @@ button,
 .botao,
 .voltar,
 .atualizar {
-
     display: inline-block;
-
-    width: 100%;
-
-    padding: 14px;
-
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
     margin-top: 10px;
-
     background-color: #222;
-
     color: white;
-
     border: none;
-
     border-radius: 10px;
-
     font-size: 16px;
-
     font-weight: bold;
-
     text-decoration: none;
-
     cursor: pointer;
-
     transition: 0.3s;
-
     box-sizing: border-box;
 }
 
 button:hover,
 .botao:hover,
 .voltar:hover {
-
     background-color: #444;
-
     transform: scale(1.02);
 }
 
 .atualizar {
-
     background-color: #0d711a;
+    width: auto;
+    min-width: 120px;
+    padding: 12px 18px;
 }
 
 .atualizar:hover {
-
     background-color: #0a5c15;
-
     transform: scale(1.02);
 }
 
 table {
-
     width: 95%;
-
     margin: 30px auto;
-
     border-collapse: collapse;
-
-    background: rgba(0,0,0,0.60);
-
+    background: rgba(0, 0, 0, 0.60);
     backdrop-filter: blur(5px);
-
     border-radius: 15px;
-
     overflow: hidden;
-
-    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 
 th {
-
     background-color: #b00000;
-
     padding: 15px;
-
     color: white;
-
     text-shadow: 1px 1px 3px black;
 }
 
 td {
-
     padding: 12px;
-
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 
 tr:nth-child(even) {
-
-    background-color: rgba(255,255,255,0.03);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 tr:hover {
-
-    background-color: rgba(255,0,0,0.15);
+    background-color: rgba(255, 0, 0, 0.15);
 }
 
 .mensagem {
-
     margin-top: 15px;
-
     color: #00ffcc;
-
     font-weight: bold;
 }
 
 .menu {
-
     margin-top: 30px;
-
     display: flex;
-
     flex-wrap: wrap;
-
     justify-content: center;
-
     gap: 15px;
 }
 
 .menu button {
-
-    width: 300px;
+    width: 220px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     .painel,
     .container {
-
         width: 92%;
-
         padding: 20px;
     }
 
     input,
     select {
-
         width: 95%;
     }
 
     .menu button {
-
         width: 100%;
     }
 
     table {
-
         font-size: 13px;
     }
+}
+
+form input {
+    width: 80%;
+    max-width: 300px;
+}
+
+form button {
+    width: 80%;
+    max-width: 300px;
+    display: block;
+    margin: 10px auto;
+}
+
+.voltar {
+    width: 80%;
+    max-width: 300px;
 }
