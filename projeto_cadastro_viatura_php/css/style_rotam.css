@@ -1,0 +1,360 @@
+/* 
+    Configuração geral da página inteira.
+    Aqui controla:
+    - fundo;
+    - fonte;
+    - alinhamento;
+    - altura da tela;
+*/
+body {
+    margin: 0;
+    /* remove margem padrão do navegador */
+    padding: 0;
+    /* remove espaçamento interno padrão */
+    font-family: Arial, Helvetica, sans-serif;
+    /* define a fonte principal do sistema */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        url('../imagens/rotam.jpg');
+    /*
+        Fundo da página:
+        - primeira camada = escurecimento transparente;
+        - segunda camada = imagem do escudo.
+    */
+    background-size: cover;
+    /* faz a imagem cobrir toda a tela */
+    background-position: center;
+    /* centraliza a imagem */
+    background-repeat: no-repeat;
+    /* impede repetir a imagem */
+    background-attachment: fixed;
+    /* deixa o fundo fixo ao rolar */
+    min-height: 100vh;
+    /* altura mínima da tela inteira */
+    color: white;
+    /* cor padrão dos textos */
+    text-align: center;
+    /* centraliza textos */
+}
+
+/* 
+    Painel principal.
+    Usado normalmente no MENU.
+*/
+.painel {
+    background: rgba(0, 0, 0, 0.45);
+    /* fundo preto transparente */
+    width: 90%;
+    /* largura adaptável */
+    max-width: 700px;
+    /* largura máxima */
+    margin: 40px auto;
+    /*
+        margem superior/inferior = 40px
+        auto = centraliza horizontalmente
+    */
+    padding: 35px;
+    /* espaço interno */
+    border-radius: 25px;
+    /* bordas arredondadas */
+    backdrop-filter: blur(4px);
+    /* efeito vidro fosco */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    /* sombra externa */
+}
+
+/* 
+    Container menor.
+    Normalmente usado em:
+    - login;
+    - formulários menores.
+*/
+.container {
+    background: rgba(0, 0, 0, 0.45);
+    /* fundo transparente */
+    width: 90%;
+    /* largura adaptável */
+    max-width: 300px;
+    /* largura máxima menor */
+    margin: 40px auto;
+    /* centraliza */
+    padding: 35px;
+    /* espaço interno */
+    border-radius: 25px;
+    /* arredondamento */
+    backdrop-filter: blur(4px);
+    /* efeito blur */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    /* sombra */
+    color: white;
+    /* texto branco */
+}
+
+/* 
+    Título principal da página.
+*/
+h1 {
+    color: #ff1e1e;
+    /* vermelho */
+    text-shadow: 2px 2px 5px black;
+    /* sombra no texto */
+    font-size: 42px;
+    /* tamanho grande */
+    margin-bottom: 10px;
+    /* espaço abaixo */
+}
+
+/* 
+    Subtítulo.
+*/
+h2 {
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    margin-bottom: 25px;
+}
+
+/* 
+    Texto dos labels dos formulários.
+*/
+label {
+    display: block;
+    /* faz o label ocupar linha inteira */
+    margin-top: 12px;
+    /* espaço acima */
+    font-weight: bold;
+    /* negrito */
+}
+
+/* 
+    Campos input e select.
+*/
+input,
+select {
+    width: 80%;
+    /* largura do campo */
+    max-width: 300px;
+    /* largura máxima */
+    padding: 14px;
+    /* espaço interno */
+    margin-top: 6px;
+    /* espaço acima */
+    margin-bottom: 14px;
+    /* espaço abaixo */
+    border: none;
+    /* remove borda padrão */
+    border-radius: 10px;
+    /* arredonda cantos */
+    font-size: 16px;
+    /* tamanho da fonte */
+    outline: none;
+    /* remove borda azul padrão ao clicar */
+}
+
+/* 
+    Botões principais do sistema.
+*/
+button,
+.botao,
+.voltar,
+.atualizar {
+    display: inline-block;
+    /* permite largura e altura */
+    width: 80%;
+    /* largura padrão */
+    max-width: 400px;
+    /* largura máxima */
+    padding: 12px;
+    /* espaço interno */
+    margin-top: 10px;
+    /* espaço acima */
+    background-color: #222;
+    /* fundo preto */
+    color: white;
+    /* texto branco */
+    border: none;
+    /* remove borda */
+    border-radius: 10px;
+    /* arredonda */
+    font-size: 16px;
+    /* tamanho da fonte */
+    font-weight: bold;
+    /* negrito */
+    text-decoration: none;
+    /* remove sublinhado */
+    cursor: pointer;
+    /* mãozinha */
+    transition: 0.3s;
+    /* animação suave */
+    box-sizing: border-box;
+    /* padding conta dentro da largura */
+}
+
+/* 
+    Efeito hover dos botões.
+*/
+button:hover,
+.botao:hover,
+.voltar:hover {
+    background-color: #444;
+    /* clareia botão */
+    transform: scale(1.02);
+    /* aumenta levemente */
+}
+
+/* 
+    Botão atualizar.
+*/
+.atualizar {
+    background-color: #0d711a;
+    /* verde */
+    width: auto;
+    /* largura automática */
+    min-width: 120px;
+    /* largura mínima */
+    padding: 12px 18px;
+}
+
+/* Hover botão atualizar */
+.atualizar:hover {
+    background-color: #0a5c15;
+    transform: scale(1.02);
+}
+
+/* 
+    Tabelas do sistema.
+*/
+table {
+    width: 95%;
+    /* largura da tabela */
+    margin: 30px auto;
+    /* centraliza */
+    border-collapse: collapse;
+    /* une bordas */
+    background: rgba(0, 0, 0, 0.60);
+    /* fundo transparente */
+    backdrop-filter: blur(5px);
+    /* blur */
+    border-radius: 15px;
+    /* arredondamento */
+    overflow: hidden;
+    /* respeita arredondamento */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    /* sombra */
+}
+
+/* Cabeçalho da tabela */
+th {
+    background-color: #b00000;
+    /* vermelho escuro */
+    padding: 15px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+/* Linhas da tabela */
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* 
+    Linhas pares da tabela.
+*/
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Hover nas linhas */
+tr:hover {
+    background-color: rgba(255, 0, 0, 0.15);
+}
+
+/* 
+    Mensagens do sistema.
+*/
+.mensagem {
+    margin-top: 15px;
+    color: #00ffcc;
+    /* verde água */
+    font-weight: bold;
+}
+
+/* 
+    Área do menu.
+*/
+.menu {
+    margin-top: 30px;
+    display: flex;
+    /* coloca botões lado a lado */
+    flex-wrap: wrap;
+    /* quebra linha */
+    justify-content: center;
+    /* centraliza */
+    gap: 15px;
+    /* distância entre botões */
+}
+
+/* Botões do menu */
+.menu button {
+    width: 220px;
+}
+
+/* 
+    Responsividade.
+    Ajustes para celular.
+*/
+@media (max-width: 700px) {
+
+    .painel,
+    .container {
+        width: 92%;
+        /* aumenta aproveitamento */
+        padding: 20px;
+    }
+
+    input,
+    select {
+        width: 95%;
+        /* campos maiores no celular */
+    }
+
+    .menu button {
+        width: 100%;
+        /* botão ocupa linha inteira */
+    }
+
+    table {
+        font-size: 13px;
+        /* reduz fonte */
+    }
+}
+
+/* 
+    Inputs dentro de forms.
+*/
+form input {
+    width: 80%;
+    max-width: 300px;
+}
+
+/* 
+    Botões dentro de forms.
+*/
+form button {
+    width: 80%;
+    max-width: 300px;
+    display: block;
+    /* quebra linha */
+    margin: 10px auto;
+    /* centraliza */
+}
+
+/* 
+    Botão voltar.
+*/
+.voltar {
+    width: 80%;
+    max-width: 300px;
+}

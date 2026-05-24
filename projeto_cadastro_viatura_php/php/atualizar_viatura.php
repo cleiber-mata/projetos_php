@@ -28,7 +28,7 @@ $viatura = $resultado->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <title>Atualizar Viatura</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_03.css">
 </head>
 
 <body>

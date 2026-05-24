@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background: #f1f5f9;
+
+    color: #1e293b;
+
+    text-align: center;
+
+}
+
+/* Painel principal */
+
+.painel {
+
+    width: 95%;
+    max-width: 1100px;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    border: 1px solid #dbe1e8;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+}
+
+/* Containers menores */
+
+.container {
+
+    width: 95%;
+    max-width: 420px;
+
+    margin: 20px auto;
+
+    padding: 22px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    border: 1px solid #dbe1e8;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+}
+
+/* Títulos */
+
+h1 {
+
+    font-size: 30px;
+
+    color: #0f172a;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+}
+
+h2 {
+
+    font-size: 16px;
+
+    color: #475569;
+
+    margin-bottom: 22px;
+
+    font-weight: 500;
+
+}
+
+/* Labels */
+
+label {
+
+    display: block;
+
+    text-align: left;
+
+    width: 100%;
+
+    max-width: 320px;
+
+    margin: 10px auto 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+}
+
+/* Inputs */
+
+input,
+select {
+
+    width: 100%;
+
+    max-width: 320px;
+
+    padding: 11px 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: #f8fafc;
+
+    margin-bottom: 12px;
+
+}
+
+input:focus,
+select:focus {
+
+    border-color: #2563eb;
+
+    background: white;
+
+}
+
+/* Botões */
+
+button,
+.botao,
+.voltar,
+.atualizar {
+
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #1e293b;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    margin: 6px;
+
+}
+
+button:hover,
+.botao:hover,
+.voltar:hover {
+
+    background: #334155;
+
+}
+
+.atualizar {
+
+    background: #2563eb;
+
+}
+
+.atualizar:hover {
+
+    background: #1d4ed8;
+
+}
+
+/* Menu */
+
+.menu {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+.menu button {
+
+    width: 210px;
+
+}
+
+/* Tabela */
+
+table {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #dbe1e8;
+
+}
+
+th {
+
+    background: #1e293b;
+
+    color: white;
+
+    padding: 12px;
+
+    font-size: 14px;
+
+}
+
+td {
+
+    padding: 10px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    font-size: 13px;
+
+}
+
+tr:nth-child(even) {
+
+    background: #f8fafc;
+
+}
+
+tr:hover {
+
+    background: #e2e8f0;
+
+}
+
+/* Mensagens */
+
+.mensagem {
+
+    margin-top: 12px;
+
+    color: #2563eb;
+
+    font-weight: bold;
+
+}
+
+/* Responsivo */
+
+@media(max-width: 700px) {
+
+    .menu button {
+
+        width: 100%;
+
+    }
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+}

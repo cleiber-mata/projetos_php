@@ -1,0 +1,382 @@
+/* 
+    Remove margens e preenchimentos padrões do navegador.
+    Também faz largura e altura incluírem borda e padding no cálculo.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    Configuração geral da página.
+    Aqui mexe no fundo, fonte, cor do texto e espaçamento da tela.
+*/
+body {
+    min-height: 100vh;
+    /* altura mínima da tela inteira */
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    /* fonte do sistema */
+    background: #f4f6f8;
+    /* fundo cinza claro */
+    color: #1f2937;
+    /* cor padrão dos textos */
+    padding: 32px 24px;
+    /* espaço interno da página */
+    text-align: left;
+    /* alinha textos à esquerda */
+}
+
+/* Título principal da página */
+h1 {
+    font-size: 26px;
+    /* tamanho do título */
+    color: #1f2937;
+    /* cor do título */
+    margin-bottom: 6px;
+    /* espaço abaixo */
+    font-weight: 700;
+    /* deixa em negrito forte */
+}
+
+/* Subtítulo da página */
+h2 {
+    font-size: 14px;
+    /* tamanho menor */
+    color: #6b7280;
+    /* cinza */
+    font-weight: 400;
+    /* peso normal */
+    margin-bottom: 28px;
+    /* espaço abaixo */
+}
+
+/* 
+    Caixa principal das telas.
+    Usada em menu, pesquisa, cadastro e painéis.
+*/
+.painel,
+.container {
+    width: 100%;
+    /* ocupa toda a largura disponível */
+    max-width: 1180px;
+    /* limita a largura máxima */
+    margin: 0 auto 24px auto;
+    /* centraliza e cria espaço embaixo */
+    padding: 28px 24px;
+    /* espaço interno */
+    background: #ffffff;
+    /* fundo branco */
+    border: 1px solid #e5e7eb;
+    /* borda cinza clara */
+    border-radius: 10px;
+    /* cantos arredondados */
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    /* sombra leve */
+}
+
+/* Faz o formulário ocupar a largura disponível */
+form {
+    width: 50%;
+}
+
+/* Texto acima dos campos */
+label {
+    display: block;
+    /* fica em linha separada */
+    font-size: 13px;
+    /* tamanho da fonte */
+    font-weight: 600;
+    /* negrito médio */
+    color: #4b5563;
+    /* cinza escuro */
+    margin-bottom: 8px;
+    /* espaço entre label e input */
+}
+
+/* Campos de digitação e seleção */
+input,
+select {
+    width: 100%;
+    /* ocupa a largura do espaço onde está */
+    height: 38px;
+    /* altura do campo */
+    padding: 8px 12px;
+    /* espaço interno */
+    border: 1px solid #cbd5e1;
+    /* borda cinza */
+    border-radius: 5px;
+    /* cantos arredondados */
+    background: #ffffff;
+    /* fundo branco */
+    color: #111827;
+    /* cor do texto digitado */
+    font-size: 14px;
+    /* tamanho da fonte */
+    outline: none;
+    /* remove contorno padrão ao clicar */
+}
+
+/* Cor do texto de exemplo dentro do input */
+input::placeholder {
+    color: #9ca3af;
+}
+
+/* Efeito quando clica no campo */
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    /* borda azul */
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+    /* brilho azul leve */
+}
+
+/* 
+    Organiza campos em colunas.
+    Ideal para cadastro de viaturas e policiais.
+*/
+.form-grid {
+    display: grid;
+    /* ativa grade */
+    grid-template-columns: repeat(3, 1fr);
+    /* cria 3 colunas iguais */
+    gap: 18px;
+    /* espaço entre os campos */
+}
+
+/* Faz um campo ocupar a linha inteira */
+.form-full {
+    grid-column: 1 / -1;
+}
+
+/* 
+    Área dos botões do menu/formulário.
+    Alinha os botões no final da caixa.
+*/
+.menu {
+    display: flex;
+    /* coloca os botões em linha */
+    flex-wrap: wrap;
+    /* permite quebrar linha */
+    justify-content: flex-end;
+    /* joga botões para a direita */
+    gap: 10px;
+    /* espaço entre botões */
+    margin-top: 22px;
+    /* espaço acima */
+    padding-top: 18px;
+    /* espaço interno acima */
+    border-top: 1px solid #e5e7eb;
+    /* linha separadora */
+}
+
+/* Estilo geral dos botões */
+button,
+.botao,
+.voltar,
+.atualizar {
+    display: inline-flex;
+    /* permite centralizar texto */
+    align-items: center;
+    /* centraliza verticalmente */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    min-width: 120px;
+    /* largura mínima */
+    height: 38px;
+    /* altura */
+    padding: 0 16px;
+    /* espaço lateral */
+    border: none;
+    /* remove borda padrão */
+    border-radius: 6px;
+    /* cantos arredondados */
+    background: #2563eb;
+    /* azul padrão */
+    color: #ffffff;
+    /* texto branco */
+    font-size: 13px;
+    /* tamanho da letra */
+    font-weight: 600;
+    /* negrito médio */
+    text-decoration: none;
+    /* remove sublinhado de links */
+    cursor: pointer;
+    /* mãozinha ao passar o mouse */
+    transition: 0.2s;
+    /* animação suave */
+    margin-right: 6px;
+    /* espaço à direita */
+    margin-bottom: 5px;
+    /* espaço abaixo */
+    margin-top: 15px;
+    /* espaço acima */
+}
+
+/* Efeito ao passar o mouse em botões comuns */
+button:hover,
+.botao:hover {
+    background: #1d4ed8;
+}
+
+/* Botão voltar ou limpar */
+.voltar {
+    background: #64748b;
+    /* cinza azulado */
+}
+
+/* Hover do botão voltar */
+.voltar:hover {
+    background: #475569;
+}
+
+/* Botão atualizar/incluir */
+.atualizar {
+    background: #059669;
+    /* verde */
+}
+
+/* Hover do botão atualizar */
+.atualizar:hover {
+    background: #047857;
+}
+
+/* Botão sair/logout */
+.sair,
+.logout {
+    background: #dc2626;
+    /* vermelho */
+}
+
+/* Hover do botão sair/logout */
+.sair:hover,
+.logout:hover {
+    background: #b91c1c;
+}
+
+/* Tabela de pesquisa/listagem */
+table {
+    width: 100%;
+    /* ocupa toda largura */
+    margin: 22px auto 0 auto;
+    /* espaço acima */
+    border-collapse: collapse;
+    /* une as bordas */
+    background: #ffffff;
+    /* fundo branco */
+    border: 1px solid #e5e7eb;
+    /* borda externa */
+    border-radius: 10px;
+    /* arredonda cantos */
+    overflow: hidden;
+    /* respeita o arredondamento */
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    /* sombra leve */
+}
+
+/* Cabeçalho da tabela */
+th {
+    background: #f8fafc;
+    /* fundo cinza muito claro */
+    color: #475569;
+    /* texto cinza */
+    padding: 12px;
+    /* espaço interno */
+    font-size: 13px;
+    /* tamanho */
+    font-weight: 700;
+    /* negrito */
+    text-align: left;
+    /* texto à esquerda */
+    border-bottom: 1px solid #e5e7eb;
+    /* linha inferior */
+}
+
+/* Células da tabela */
+td {
+    padding: 1px 8px;
+    /* espaço interno */
+    font-size: 13px;
+    /* tamanho do texto */
+    color: #334155;
+    /* cor do texto */
+    border-bottom: 2px solid #f1f5f9;
+    /* linha entre registros */
+}
+
+/* Linha da tabela quando passa o mouse */
+tr:hover {
+    background: #f8fafc;
+}
+
+/* Mensagem de sucesso ou aviso */
+.mensagem {
+    margin-top: 14px;
+    /* espaço acima */
+    padding: 10px 14px;
+    /* espaço interno */
+    background: #ecfdf5;
+    /* fundo verde claro */
+    color: #047857;
+    /* texto verde */
+    border: 1px solid #a7f3d0;
+    /* borda verde clara */
+    border-radius: 6px;
+    /* cantos arredondados */
+    font-weight: 600;
+    /* negrito */
+    text-align: center;
+    /* centraliza texto */
+}
+
+/* Caixa específica da tela de login */
+.login-box {
+    max-width: 420px;
+    /* largura máxima */
+    margin: 80px auto;
+    /* centraliza e afasta do topo */
+    padding: 28px;
+    /* espaço interno */
+    background: #ffffff;
+    /* fundo branco */
+    border: 1px solid #e5e7eb;
+    /* borda clara */
+    border-radius: 10px;
+    /* cantos arredondados */
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    /* sombra leve */
+    text-align: center;
+    /* centraliza conteúdo */
+}
+
+/* Botões dentro da tela de login */
+.login-box button {
+    width: 180px;
+    /* largura fixa menor */
+}
+
+/* Ajustes para telas menores, como celular */
+@media (max-width: 800px) {
+    body {
+        padding: 20px 12px;
+        /* reduz espaço lateral */
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* uma coluna só */
+    }
+
+    .menu {
+        justify-content: center;
+        /* centraliza botões */
+    }
+
+    button,
+    .botao,
+    .voltar,
+    .atualizar {
+        width: 100%;
+        /* botões ocupam largura toda */
+    }
+}
