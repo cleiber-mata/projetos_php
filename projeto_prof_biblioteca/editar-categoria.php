@@ -1,10 +1,10 @@
 <h1>Editar Categoria</h1>
 <?php
-	$sql = "SELECT * FROM categoria WHERE id_categoria=".$_GET['id_categoria'];
+$sql = "SELECT * FROM categoria WHERE id_categoria=" . $_GET['id_categoria'];
 
-	$result = $conn->query($sql);
+$result = $conn->query($sql);
 
-	$row = $result->fetch_object();
+$row = $result->fetch_object();
 ?>
 <form action="?page=salvar-categoria" method="POST">
 	<input type="hidden" name="acao" value="editar">
@@ -16,4 +16,9 @@
 	<div class="mb-3">
 		<button type="submit" class="btn btn-primary">Enviar</button>
 	</div>
+
+	<div class="mb-3">
+		<button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
+	</div>
+
 </form>

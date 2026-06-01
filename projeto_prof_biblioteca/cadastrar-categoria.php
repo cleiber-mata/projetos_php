@@ -8,4 +8,6 @@
 	<div class="mb-3">
 		<button type="submit" class="btn btn-primary">Enviar</button>
 	</div>
+	<div class="mb-3">
+		<button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
 </form>
