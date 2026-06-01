@@ -2,7 +2,7 @@
 	define("HOST", "localhost");
 	define("USER", "root");
 	define("PASS", "");
-	define("BASE", "biblioteca_prof");
+	define("BASE", "biblioteca_estrutura");
 
 	$conn = new MySQLi(HOST,USER,PASS,BASE);
 

@@ -8,7 +8,7 @@ $qtd = $result->num_rows;
 
 if ($qtd > 0) {
     print "<p>Encontrou <b>$qtd</b> resultado(s)</p>";
-    print "<table class='table table-bordered table-striped table-hover'>";
+    print "<table class='table table-hover table-sm align-middle' style='white-space: nowrap;'>";
     print "<tr>";
     print "<th>ID</th>";
     print "<th>Nome</th>";
