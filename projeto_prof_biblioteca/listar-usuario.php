@@ -22,10 +22,10 @@ if ($qtd > 0) {
         print "<td>" . $row->nome_leitor . "</td>";
         print "<td>" . $row->telefone_leitor . "</td>";
         print "<td>" . $row->email_leitor . "</td>";
-        print "<td>
-					<button class='btn btn-success btn-sm' onclick=\"location.href='?page=editar-usuario&id_leitor={$row->id_leitor}';\">Editar</button>
+        print "<td class='text-center' style='white-space: nowrap; width: 180px;'>
+					<button class='btn btn-outline-primary btn-sm' onclick=\"location.href='?page=editar-usuario&id_leitor={$row->id_leitor}';\">Editar</button>
 
-					<button class='btn btn-danger btn-sm' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar-usuario&acao=excluir&id_leitor={$row->id_leitor}';}else{false;}\">Excluir</button>
+					<button class='btn btn-outline-danger btn-sm ms-1' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar-usuario&acao=excluir&id_leitor={$row->id_leitor}';}else{false;}\">Excluir</button>
 			       </td>";
         print "</tr>";
     }
@@ -37,10 +37,17 @@ if ($qtd > 0) {
 
 
 <form>
-    <div class="mb-3">
-        <button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
-    </div>
-    <div class="mb-3">
-        <button type="button" class="btn btn-secondary" onclick="location.href='?page=cadastrar-usuario'">Cadastrar Novo</button>
-    </div>
+    <div class="mt-3">
+    <button type="button"
+        class="btn btn-secondary me-2"
+        onclick="history.back()">
+        Voltar
+    </button>
+
+    <button type="button"
+        class="btn btn-primary"
+        onclick="location.href='?page=cadastrar-usuario'">
+        Cadastrar Novo
+    </button>
+</div>
 </form>

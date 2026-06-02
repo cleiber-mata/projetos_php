@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `livro` (
   `edicao_livro` CHAR(3) NOT NULL,
   `ano_livro` YEAR(4) NOT NULL,
   `categoria_id_categoria` INT(10) UNSIGNED NOT NULL,
+  `status_livro` VARCHAR(20) NOT NULL DEFAULT 'DISPONÍVEL',
   PRIMARY KEY (`id_livro`),
   UNIQUE KEY `id_livro_UNIQUE` (`id_livro`),
   KEY `fk_livro_categoria1_idx` (`categoria_id_categoria`),
