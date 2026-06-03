@@ -1,4 +1,10 @@
 <h1>Cadastrar Empréstimo</h1>
+<?php
+$id_leitor = $_GET['leitor_id'] ?? '';
+$id_livro = $_GET['livro_id'] ?? ($_GET['id_livro'] ?? '');
+$id_atendente = $_GET['atendente_id'] ?? '';
+$data_hoje = date('Y-m-d');
+?>
 
 <form action="?page=salvar-emprestimo" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
@@ -13,7 +19,8 @@
             $res_leitor = $conn->query($sql_leitor);
 
             while ($leitor = $res_leitor->fetch_object()) {
-                print "<option value='{$leitor->id_leitor}'>{$leitor->nome_leitor}</option>";
+                $selected = ($id_leitor == $leitor->id_leitor) ? "selected" : "";
+                print "<option value='{$leitor->id_leitor}' {$selected}>{$leitor->nome_leitor}</option>";
             }
             ?>
         </select>
@@ -35,16 +42,8 @@
             $res_livro = $conn->query($sql_livro);
 
             while ($livro = $res_livro->fetch_object()) {
-
-                $selected = '';
-
-                if ($id_livro == $livro->id_livro) {
-                    $selected = 'selected';
-                }
-
-                print "<option value='{$livro->id_livro}' {$selected}>
-                    {$livro->titulo_livro}
-                </option>";
+                $selected = ($id_livro == $livro->id_livro) ? "selected" : "";
+                print "<option value='{$livro->id_livro}' {$selected}>{$livro->titulo_livro}</option>";
             }
 
             ?>
@@ -62,7 +61,8 @@
             $res_atendente = $conn->query($sql_atendente);
 
             while ($atendente = $res_atendente->fetch_object()) {
-                print "<option value='{$atendente->id_atendente}'>{$atendente->nome_atendente}</option>";
+                $selected = ($id_atendente == $atendente->id_atendente) ? "selected" : "";
+                print "<option value='{$atendente->id_atendente}' {$selected}>{$atendente->nome_atendente}</option>";
             }
             ?>
         </select>
@@ -70,7 +70,7 @@
 
     <div class="mb-3">
         <label>Data do Empréstimo:</label>
-        <input type="date" name="data_emprestimo" class="form-control" required>
+        <input type="date" name="data_emprestimo" value="<?php print $data_hoje; ?>" class="form-control" required>
     </div>
 
     <div class="mb-3">
@@ -78,14 +78,8 @@
         <input type="date" name="devolucao_emprestimo" class="form-control" required>
     </div>
 
-
     <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
-    <div class="mb-3">
-        <button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
-    </div>
-    <div class="mb-3">
-        <button type="button" class="btn btn-secondary" onclick="location.href='?page=cadastrar-usuario'">Cadastrar Novo Usuário</button>
+        <?php echo botaoEnviar(); ?>
+        <?php echo botaoVoltar(); ?>
     </div>
 </form>

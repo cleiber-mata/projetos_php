@@ -1,6 +1,8 @@
 <h1>Editar Empréstimo</h1>
 
 <?php
+
+
 $sql = "SELECT * FROM emprestimo WHERE id_emprestimo=" . $_GET['id_emprestimo'] . ";";
 
 $result = $conn->query($sql);
@@ -72,9 +74,7 @@ $row = $result->fetch_object();
 
 
     <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
-    <div class="mb-3">
-        <button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
+        <?php echo botaoEnviar(); ?>
+        <?php echo botaoVoltar(); ?>
     </div>
 </form>

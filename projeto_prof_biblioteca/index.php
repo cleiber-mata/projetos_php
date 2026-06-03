@@ -94,6 +94,7 @@
 				<?php
 				//CONEXÃO COM O BANCO DE DADOS
 				include('config.php');
+				include_once("componentes_botoes.php");
 
 				switch (@$_REQUEST['page']) {
 					//categoria
@@ -169,6 +170,11 @@
 					// pesquisa
 					case 'pesquisa':
 						include('pesquisa.php');
+						break;
+
+					// histórico do usuário
+					case 'historico-usuario':
+						include('historico-usuario.php');
 						break;
 
 					default:

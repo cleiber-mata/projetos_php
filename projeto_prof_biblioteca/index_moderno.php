@@ -3,15 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Biblioteca</title>
 
-    <link rel="stylesheet"
-        type="text/css"
-        href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
     <style>
         body {
@@ -29,17 +24,15 @@
             padding-bottom: 50px;
         }
 
-        .navbar {
-            box-shadow: 0px 3px 18px rgba(0, 0, 0, 0.45);
-        }
-
         .caixa-principal {
-            background: rgba(255, 255, 255, 0.70);
-            border-radius: 120px;
-            padding: clamp(20px, 4vw, 40px);
-            margin-top: 90px;
-            box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.60);
-            max-width: 1400px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            overflow-x: auto;
         }
 
         h1 {
@@ -50,6 +43,28 @@
         .texto-bemvindo {
             font-size: 20px;
             color: #555;
+        }
+
+        .tabela-emprestimo {
+            font-size: 0.95rem;
+        }
+
+        .tabela-emprestimo th,
+        .tabela-emprestimo td {
+            padding: 10px 14px;
+            white-space: nowrap;
+        }
+
+        .tabela-emprestimo th {
+            font-weight: 700;
+        }
+
+        .tabela-emprestimo td:nth-child(4) {
+            min-width: 230px;
+        }
+
+        .tabela-emprestimo td:last-child {
+            min-width: 170px;
         }
     </style>
 </head>
@@ -63,14 +78,8 @@
 
                 <a class="navbar-brand" href="index_moderno.php">Biblioteca</a>
 
-                <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -82,80 +91,50 @@
                             <a class="nav-link active" href="index_moderno.php">Início</a>
                         </li>
 
-                        <!-- Categoria -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 Categoria
                             </a>
-
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="?page=cadastrar-categoria">Cadastrar</a></li>
                                 <li><a class="dropdown-item" href="?page=listar-categoria">Listar</a></li>
                             </ul>
                         </li>
 
-                        <!-- Livro -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 Livro
                             </a>
-
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="?page=cadastrar-livro">Cadastrar</a></li>
                                 <li><a class="dropdown-item" href="?page=listar-livro">Listar</a></li>
                             </ul>
                         </li>
 
-                        <!-- Atendente -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 Atendente
                             </a>
-
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="?page=cadastrar-atendente">Cadastrar</a></li>
                                 <li><a class="dropdown-item" href="?page=listar-atendente">Listar</a></li>
                             </ul>
                         </li>
 
-                        <!-- Usuário -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 Usuário
                             </a>
-
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="?page=cadastrar-usuario">Cadastrar</a></li>
                                 <li><a class="dropdown-item" href="?page=listar-usuario">Listar</a></li>
                             </ul>
                         </li>
 
-                        <!-- Empréstimo -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 Empréstimo
                             </a>
-
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="?page=cadastrar-emprestimo">Cadastrar</a></li>
                                 <li><a class="dropdown-item" href="?page=listar-emprestimo">Listar</a></li>
@@ -164,10 +143,13 @@
 
                     </ul>
 
-                    <form class="d-flex" role="search">
+                    <form class="d-flex" role="search" action="index_moderno.php" method="GET">
+                        <input type="hidden" name="page" value="pesquisa">
+
                         <input class="form-control me-2"
                             type="search"
-                            placeholder="Pesquisar"
+                            name="q"
+                            placeholder="Pesquisar no sistema"
                             aria-label="Pesquisar">
 
                         <button class="btn btn-outline-light" type="submit">
@@ -180,111 +162,107 @@
         </nav>
 
         <div class="container">
-            <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
-                <div class="col-md-12 caixa-principal text-center">
+            <div class="row">
+                <div class="col-12 caixa-principal">
 
                     <?php
-                    //CONEXÃO COM O BANCO DE DADOS
                     include('config.php');
+                    include_once("componentes_botoes.php");
 
                     switch (@$_REQUEST["page"]) {
 
-                        // categoria
+                        // Categoria
                         case 'cadastrar-categoria':
                             include('cadastrar-categoria.php');
                             break;
-
                         case 'listar-categoria':
                             include('listar-categoria.php');
                             break;
-
                         case 'editar-categoria':
                             include('editar-categoria.php');
                             break;
-
                         case 'salvar-categoria':
                             include('salvar-categoria.php');
                             break;
 
-                        // livro
+                        // Livro
                         case 'cadastrar-livro':
                             include('cadastrar-livro.php');
                             break;
-
                         case 'listar-livro':
                             include('listar-livro.php');
                             break;
-
                         case 'editar-livro':
                             include('editar-livro.php');
                             break;
-
                         case 'salvar-livro':
                             include('salvar-livro.php');
                             break;
 
-                        // atendente
+                        // Atendente
                         case 'cadastrar-atendente':
                             include('cadastrar-atendente.php');
                             break;
-
                         case 'listar-atendente':
                             include('listar-atendente.php');
                             break;
-
                         case 'editar-atendente':
                             include('editar-atendente.php');
                             break;
-
                         case 'salvar-atendente':
                             include('salvar-atendente.php');
                             break;
 
-                        // usuário
+                        // Usuário
                         case 'cadastrar-usuario':
                             include('cadastrar-usuario.php');
                             break;
-
                         case 'listar-usuario':
                             include('listar-usuario.php');
                             break;
-
                         case 'editar-usuario':
                             include('editar-usuario.php');
                             break;
-
                         case 'salvar-usuario':
                             include('salvar-usuario.php');
                             break;
 
-                        // empréstimo
+                        // Empréstimo
                         case 'cadastrar-emprestimo':
                             include('cadastrar-emprestimo.php');
                             break;
-
                         case 'listar-emprestimo':
                             include('listar-emprestimo.php');
                             break;
-
                         case 'editar-emprestimo':
                             include('editar-emprestimo.php');
                             break;
-
                         case 'salvar-emprestimo':
                             include('salvar-emprestimo.php');
                             break;
 
+                        // Pesquisa
+                        case 'pesquisa':
+                            include('pesquisa.php');
+                            break;
+
+                        // Histórico do usuário
+                        case 'historico-usuario':
+                            include('historico-usuario.php');
+                            break;
+
                         default:
                             print "
+                            <div class='text-center'>
                                 <h1>Bem-vindo ao Sistema da Biblioteca</h1>
                                 <hr>
                                 <p class='texto-bemvindo'>
-                                    Sistema de gerenciamento de livros,
-                                    categorias, usuários, atendentes e empréstimos.
+                                    Sistema de gerenciamento de livros, categorias,
+                                    usuários, atendentes e empréstimos.
                                 </p>
-                            ";
+                            </div>
+                        ";
                     }
-
                     ?>
 
                 </div>
@@ -293,9 +271,7 @@
 
     </div>
 
-    <script type="text/javascript"
-        src="js/bootstrap.bundle.min.js">
-    </script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -1,5 +1,7 @@
 <h1>Listar Categoria</h1>
 <?php
+
+
 $sql = "SELECT * FROM categoria";
 
 $result = $conn->query($sql);
@@ -18,10 +20,11 @@ if ($qtd > 0) {
 		print "<tr>";
 		print "<td>" . $row->id_categoria . "</td>";
 		print "<td>" . $row->nome_categoria . "</td>";
-		print "<td class='text-center' style='white-space: nowrap; width: 180px;'>
-					<button class='btn btn-outline-primary btn-sm' onclick=\"location.href='?page=editar-categoria&id_categoria={$row->id_categoria}';\">Editar</button>
-					<button class='btn btn-outline-danger btn-sm ms-1' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar-categoria&acao=excluir&id_categoria={$row->id_categoria}';}else{false;}\">Excluir</button>
-			       </td>";
+		print "<td class='text-center' style='white-space: nowrap; width: 180px;'>"
+			. botaoAtualizar("?page=editar-categoria&id_categoria={$row->id_categoria}")
+			. " "
+			. botaoExcluir("?page=salvar-categoria&acao=excluir&id_categoria={$row->id_categoria}")
+			. "</td>";
 		print "</tr>";
 	}
 	print "</table>";
@@ -30,17 +33,8 @@ if ($qtd > 0) {
 }
 ?>
 <form>
-    <div class="mt-3">
-    <button type="button"
-        class="btn btn-secondary me-2"
-        onclick="history.back()">
-        Voltar
-    </button>
-
-    <button type="button"
-        class="btn btn-primary"
-        onclick="location.href='?page=cadastrar-categoria'">
-        Cadastrar Novo
-    </button>
-</div>
+	<div class="mb-3">
+		<?php echo botaoEnviar(); ?>
+		<?php echo botaoCadastrarNovo('?page=cadastrar-categoria'); ?>
+	</div>
 </form>

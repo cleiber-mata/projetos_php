@@ -1,5 +1,6 @@
 <h1>Cadastrar Livro</h1>
 
+
 <form action="?page=salvar-livro" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
@@ -40,9 +41,7 @@
     </div>
 
     <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
-    <div class="mb-3">
-        <button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
+        <?php echo botaoEnviar(); ?>
+        <?php echo botaoVoltar(); ?>
     </div>
 </form>

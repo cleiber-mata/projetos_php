@@ -1,6 +1,8 @@
 <h1>Listar Livro</h1>
 
 <?php
+
+
 $sql = "SELECT * FROM livro";
 
 $result = $conn->query($sql);
@@ -28,20 +30,30 @@ if ($qtd > 0) {
         print "<td>" . $row->editora_livro . "</td>";
         print "<td>" . $row->edicao_livro . "</td>";
         print "<td>" . $row->ano_livro . "</td>";
+
         if ($row->status_livro == 'EMPRESTADO') {
+
             $status = "<span class='text-danger'>Emprestado</span>";
             $botaoEmprestar = "";
         } else {
+
             $status = "<span class='text-success'>Disponível</span>";
-            $botaoEmprestar = "<button class='btn btn-outline-success btn-sm' onclick=\"location.href='?page=cadastrar-emprestimo&id_livro={$row->id_livro}';\">Emprestar</button>";
+            $botaoEmprestar = botaoEmprestar(
+                "?page=cadastrar-emprestimo&id_livro={$row->id_livro}"
+            );
         }
+
         print "<td class='text-center'>{$status}</td>";
-        print "<td class='text-center' style='white-space: nowrap; width: 180px;'>
-        {$botaoEmprestar}
-        <button class='btn btn-outline-primary btn-sm ms-1' onclick=\"location.href='?page=editar-livro&id_livro={$row->id_livro}';\">Editar</button>
-       </td>";
+
+        print "<td class='text-center' style='white-space: nowrap; width: 180px;'>"
+            . $botaoEmprestar
+            . " "
+            . botaoAtualizar("?page=editar-livro&id_livro={$row->id_livro}")
+            . "</td>";
+
         print "</tr>";
     }
+    
     print "</table>";
 } else {
     print "Não encontrou resultado";
@@ -50,17 +62,8 @@ if ($qtd > 0) {
 
 
 <form>
-    <div class="mt-3">
-        <button type="button"
-            class="btn btn-secondary me-2"
-            onclick="history.back()">
-            Voltar
-        </button>
-
-        <button type="button"
-            class="btn btn-primary"
-            onclick="location.href='?page=cadastrar-livro'">
-            Cadastrar Novo
-        </button>
+    <div class="mb-3">
+        <?php echo botaoEnviar(); ?>
+        <?php echo botaoCadastrarNovo('?page=cadastrar-livro'); ?>
     </div>
 </form>

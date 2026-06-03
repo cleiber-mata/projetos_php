@@ -1,5 +1,7 @@
 <h1>Editar Usuário</h1>
 <?php
+
+
 $sql = "SELECT * FROM leitor WHERE id_leitor=" . $_GET['id_leitor'];
 
 $result = $conn->query($sql);
@@ -38,10 +40,8 @@ $row = $result->fetch_object();
         </select>
     </div>
 
-    <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
-    <div class="mb-3">
-        <button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
+     <div class="mb-3">
+        <?php echo botaoEnviar(); ?>
+        <?php echo botaoVoltar(); ?>
     </div>
 </form>

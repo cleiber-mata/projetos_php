@@ -1,16 +1,21 @@
 <h1>Listar Empréstimo</h1>
 
 <?php
+
 include("atualizar_status.php");
+
 $sql = "SELECT 
             e.id_emprestimo,
+            e.leitor_id_leitor,
+            e.livro_id_livro,
+            e.atendente_id_atendente,
             l.nome_leitor,
             l.telefone_leitor,
             li.titulo_livro,
-            e.status_emprestimo,
             a.nome_atendente,
             e.data_emprestimo,
-            e.devolucao_emprestimo
+            e.devolucao_emprestimo,
+            e.status_emprestimo
         FROM emprestimo e
         INNER JOIN leitor l ON e.leitor_id_leitor = l.id_leitor
         INNER JOIN livro li ON e.livro_id_livro = li.id_livro
@@ -38,29 +43,31 @@ if ($qtd > 0) {
     print "<th>Livro</th>";
 
     print "<th>Atendente</th>";
-    print "<th>Data de Empréstimo</th>";
-    print "<th>Data de Devolução</th>";
+    print "<th>Empréstimo</th>";
+    print "<th>Devolução</th>";
     print "<th>Status</th>";
     print "<th>Ações</th>";
     print "</tr>";
     while ($row = $result->fetch_object()) {
         print "<tr>";
         $botaoDevolver = "";
-        $botaoEditar = "";
+        $botaoAtualizar = "";
+        $botaoNovoEmprestimo = "";
 
         if ($row->status_emprestimo != "DEVOLVIDO") {
 
-            $botaoDevolver = "
-        <button class='btn btn-warning btn-sm'
-        onclick=\"if(confirm('Confirmar devolução do livro?')){location.href='?page=salvar-emprestimo&acao=devolver&id_emprestimo={$row->id_emprestimo}';}\">
-        Devolver
-        </button>";
+            $botaoDevolver = botaoDevolver(
+                "?page=salvar-emprestimo&acao=devolver&id_emprestimo={$row->id_emprestimo}"
+            );
 
-            $botaoEditar = "
-        <button class='btn btn-primary btn-sm'
-        onclick=\"location.href='?page=editar-emprestimo&id_emprestimo={$row->id_emprestimo}';\">
-        Editar
-        </button>";
+            $botaoAtualizar = botaoAtualizar(
+                "?page=editar-emprestimo&id_emprestimo={$row->id_emprestimo}"
+            );
+        } else {
+
+            $botaoNovoEmprestimo = botaoEmprestar(
+                "?page=cadastrar-emprestimo&leitor_id={$row->leitor_id_leitor}&livro_id={$row->livro_id_livro}&atendente_id={$row->atendente_id_atendente}"
+            );
         }
         print "<td>" . $row->id_emprestimo . "</td>";
         print "<td>" . $row->nome_leitor . "</td>";
@@ -73,7 +80,8 @@ if ($qtd > 0) {
         print "<td>" . $row->status_emprestimo . "</td>";
         print "<td style='white-space: nowrap; width: 180px; text-align:center;'>
         {$botaoDevolver}
-        {$botaoEditar}
+        {$botaoAtualizar}
+        {$botaoNovoEmprestimo}
        </td>";
     }
     print "</table>";
@@ -84,17 +92,8 @@ if ($qtd > 0) {
 
 
 <form>
-    <div class="mt-3">
-        <button type="button"
-            class="btn btn-secondary me-2"
-            onclick="history.back()">
-            Voltar
-        </button>
-
-        <button type="button"
-            class="btn btn-primary"
-            onclick="location.href='?page=cadastrar-emprestimo'">
-            Cadastrar Novo
-        </button>
+    <div class="mb-3">
+        <?php echo botaoEnviar(); ?>
+        <?php echo botaoCadastrarNovo('?page=cadastrar-emprestimo'); ?>
     </div>
 </form>
