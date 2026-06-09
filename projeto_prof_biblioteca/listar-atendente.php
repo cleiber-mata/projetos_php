@@ -1,6 +1,12 @@
 <h1>Listar Atendente</h1>
-<?php
 
+<form>
+    <div class="mb-3">
+        <?php echo botaoCadastrarNovo('?page=cadastrar-atendente'); ?>
+    </div>
+</form>
+
+<?php
 
 $sql = "SELECT * FROM atendente";
 
@@ -21,7 +27,9 @@ if ($qtd > 0) {
         print "<td>" . $row->id_atendente . "</td>";
         print "<td>" . $row->nome_atendente . "</td>";
         print "<td class='text-center' style='white-space: nowrap; width: 180px;'>
-					" . botaoExcluir("?page=salvar-atendente&acao=excluir&id_atendente={$row->id_atendente}") . "
+			" . botaoHistorico("?page=historico-atendente&id_atendente={$row->id_atendente}")
+            . " "
+            . botaoExcluir("?page=salvar-atendente&acao=excluir&id_atendente={$row->id_atendente}") . "
 			       </td>";
         print "</tr>";
     }
@@ -33,7 +41,6 @@ if ($qtd > 0) {
 
 <form>
     <div class="mb-3">
-        <?php echo botaoEnviar(); ?>
         <?php echo botaoCadastrarNovo('?page=cadastrar-atendente'); ?>
     </div>
 </form>

@@ -28,16 +28,11 @@ $data_hoje = date('Y-m-d');
 
     <div class="mb-3">
         <label>Livro:</label>
-        <?php
-        $id_livro = $_GET['id_livro'] ?? '';
-        ?>
 
         <select name="livro_id_livro" class="form-control" required>
-
             <option value="">Selecione um livro</option>
 
             <?php
-
             $sql_livro = "SELECT * FROM livro ORDER BY titulo_livro";
             $res_livro = $conn->query($sql_livro);
 
@@ -45,9 +40,7 @@ $data_hoje = date('Y-m-d');
                 $selected = ($id_livro == $livro->id_livro) ? "selected" : "";
                 print "<option value='{$livro->id_livro}' {$selected}>{$livro->titulo_livro}</option>";
             }
-
             ?>
-
         </select>
     </div>
 

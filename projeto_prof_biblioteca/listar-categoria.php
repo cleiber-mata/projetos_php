@@ -1,6 +1,12 @@
 <h1>Listar Categoria</h1>
-<?php
 
+<form>
+	<div class="mb-3">
+		<?php echo botaoCadastrarNovo('?page=cadastrar-categoria'); ?>
+	</div>
+</form>
+
+<?php
 
 $sql = "SELECT * FROM categoria";
 
@@ -34,7 +40,6 @@ if ($qtd > 0) {
 ?>
 <form>
 	<div class="mb-3">
-		<?php echo botaoEnviar(); ?>
 		<?php echo botaoCadastrarNovo('?page=cadastrar-categoria'); ?>
 	</div>
 </form>

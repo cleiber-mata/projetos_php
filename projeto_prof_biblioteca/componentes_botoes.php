@@ -50,9 +50,10 @@ function botaoDevolver($link)
 
 function botaoCadastrarNovo($link)
 {
-    return "<button class='btn btn-outline-warning btn-sm'
-                onclick=\"if(confirm('Confirmar Cadastro?')){location.href='{$link}';}\">
-                Cadastrar Novo
+    return "<button type='button'
+                class='btn btn-outline-success btn-sm'
+                onclick=\"location.href='{$link}'\">
+                Novo Cadastro
             </button>";
 }
 

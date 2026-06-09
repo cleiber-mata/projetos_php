@@ -124,6 +124,9 @@
 					case 'salvar-livro':
 						include('salvar-livro.php');
 						break;
+					case 'historico-livro':
+						include('historico-livro.php');
+						break;
 
 					//atendente
 					case 'cadastrar-atendente':
@@ -138,6 +141,9 @@
 					case 'salvar-atendente':
 						include('salvar-atendente.php');
 						break;
+					case 'historico-atendente':
+						include('historico-atendente.php');
+						break;
 
 					//usuario
 					case 'cadastrar-usuario':
@@ -151,6 +157,9 @@
 						break;
 					case 'salvar-usuario':
 						include('salvar-usuario.php');
+						break;
+					case 'historico-usuario':
+						include('historico-usuario.php');
 						break;
 
 					//emprestimo
@@ -172,10 +181,6 @@
 						include('pesquisa.php');
 						break;
 
-					// histórico do usuário
-					case 'historico-usuario':
-						include('historico-usuario.php');
-						break;
 
 					default:
 						print "<h1>Bem vindo ao sistema da Biblioteca</h1>";

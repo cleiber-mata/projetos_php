@@ -1,4 +1,10 @@
 <h1>Listar Usuários</h1>
+<form>
+    <div class="mb-3">
+        <?php echo botaoCadastrarNovo('?page=cadastrar-usuario'); ?>
+    </div>
+</form>
+
 <?php
 
 
@@ -27,6 +33,8 @@ if ($qtd > 0) {
         print "<td class='text-center' style='white-space: nowrap; width: 180px;'>"
             . botaoAtualizar("?page=editar-usuario&id_leitor={$row->id_leitor}")
             . " "
+            . botaoHistorico("?page=historico-usuario&id_leitor={$row->id_leitor}")
+            . " "
             . botaoExcluir("?page=salvar-usuario&acao=excluir&id_leitor={$row->id_leitor}")
             . "</td>";
         print "</tr>";
@@ -40,7 +48,6 @@ if ($qtd > 0) {
 
 <form>
     <div class="mb-3">
-        <?php echo botaoEnviar(); ?>
         <?php echo botaoCadastrarNovo('?page=cadastrar-usuario'); ?>
     </div>
 </form>

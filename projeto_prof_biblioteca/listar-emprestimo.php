@@ -1,5 +1,11 @@
 <h1>Listar Empréstimo</h1>
 
+<form>
+    <div class="mb-3">
+        <?php echo botaoCadastrarNovo('?page=cadastrar-emprestimo'); ?>
+    </div>
+</form>
+
 <?php
 
 include("atualizar_status.php");
@@ -41,7 +47,6 @@ if ($qtd > 0) {
     print "<th>Leitor</th>";
     print "<th>Telefone</th>";
     print "<th>Livro</th>";
-
     print "<th>Atendente</th>";
     print "<th>Empréstimo</th>";
     print "<th>Devolução</th>";
@@ -73,7 +78,6 @@ if ($qtd > 0) {
         print "<td>" . $row->nome_leitor . "</td>";
         print "<td>" . $row->telefone_leitor . "</td>";
         print "<td>" . $row->titulo_livro . "</td>";
-
         print "<td>" . $row->nome_atendente . "</td>";
         print "<td>" . date('d/m/Y', strtotime($row->data_emprestimo)) . "</td>";
         print "<td>" . date('d/m/Y', strtotime($row->devolucao_emprestimo)) . "</td>";
@@ -90,10 +94,8 @@ if ($qtd > 0) {
 }
 ?>
 
-
 <form>
     <div class="mb-3">
-        <?php echo botaoEnviar(); ?>
         <?php echo botaoCadastrarNovo('?page=cadastrar-emprestimo'); ?>
     </div>
 </form>
